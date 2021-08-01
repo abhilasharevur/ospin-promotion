@@ -2,6 +2,10 @@ import pandas as pd
 
 
 class Summary:
+    """
+    Summary Object to store the csv file
+    """
+
     def __init__(self, data):
         pd.set_option('display.max_columns', None)
         pd.set_option('display.max_rows', None)
@@ -21,3 +25,4 @@ class Summary:
 
     def get_stats(self):
         return self.df.describe()
+

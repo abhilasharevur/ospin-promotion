@@ -19,7 +19,6 @@ def run():
         "--promotion-type",
         default=None,
         help="The type of promotion scheme",
-        # action='store_true'
     )
     parser.add_argument(
         "--output-path",

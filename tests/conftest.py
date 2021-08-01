@@ -2,10 +2,6 @@ import os
 import pytest
 import pandas as pd
 import datatest as dt
-from pathlib import Path
-
-THIS_DIR = Path(__file__).parent
-my_data_path = os.path.join(THIS_DIR, os.pardir)
 
 
 def pytest_addoption(parser):

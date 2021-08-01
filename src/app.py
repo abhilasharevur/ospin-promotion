@@ -54,7 +54,7 @@ def get_promo_results(order_df, promo_type, output_path):
     :param order_df: data (pandas dataframe) from the csv file
     :param promo_type: rebate_scheme
     :param output_path: "output/output.csv"
-    :return:
+    :return: print to stdout and write to output.csv
     """
     try:
         customer_instances = [customer.CustomerPromo(promo_type, x.organ, x.cash,
@@ -63,8 +63,9 @@ def get_promo_results(order_df, promo_type, output_path):
         result_df = pd.DataFrame([t.__dict__ for t in customer_instances])
         print(result_df['bonus_to_receive'].to_string(index=False))
 
-        # write the output to new csv file
-        result_df.to_csv(output_path)
+        # filter the columns and write the output to new csv file
+        results = result_df[['organ', 'cash', 'price', 'bonus_ratio', 'bonus_to_receive']]
+        results.to_csv(output_path, index=False)
     except Exception as err:
         print(err)
         log.error(err)

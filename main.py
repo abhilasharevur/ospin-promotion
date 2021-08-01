@@ -22,7 +22,7 @@ def run():
     )
     parser.add_argument(
         "--output-path",
-        help="Absolute path to output directory to store results",
+        help="Absolute path to output file to store results",
         default="output/output.csv"
     )
 

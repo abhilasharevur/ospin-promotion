@@ -35,8 +35,21 @@ Update configuration in config/args.cfg file
 >>> python -m src.app
 ```
 
-#### Results
+### Results
 
 The application prints the output as required to stdout. Also, the application writes the output to output/output.csv 
 file as well. Currently, it just prints the columns *organ, cash, price, bonus_ratio, bonus_results*. The **big_orders.csv**
 contains orders of million count. To test with this file, move the file to **_input_** directory and run the application.
+
+
+### Testing
+
+To run tests using Pytest - 
+```
+>>> pytest -q --input-path="tests" --promotion-type="rebate_scheme" --output-path="tests/output/test_output.csv"
+```
+- *<ins>:param</ins>* --input-path : Absolute path to input directory where test .csv files reside
+- *<ins>:param</ins>* --promotion-type : Type of promotion
+- *<ins>:param</ins>* --output-path : Absolute path to output file to store test results ``` not mandatory ```
+
+More info on pytest - https://docs.pytest.org/en/6.2.x/contents.html

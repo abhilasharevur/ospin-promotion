@@ -23,7 +23,7 @@ def job(instance, func):
 
 def main(input_dir):
     """
-    Create Summary instances for each row in the csv
+    Create Summary instances for each csv file
     :param input_dir: path to input directory which can have multiple files
     :return: returns combined pandas dataframe
     """
